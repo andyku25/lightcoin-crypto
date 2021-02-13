@@ -55,7 +55,7 @@ class Withdrawal extends Transaction {
 // CREATE A DEPOSIT OBJECT
 class Deposit extends Transaction {
   get value() {
-    return this.amount
+    return this.amount;
   }
 
   isAllowed() {
@@ -72,19 +72,19 @@ const myAccount = new Account("snow-patrol");
 
 console.log(`Starting Balance:  $${myAccount.balance}`);
 
-t1 = new Withdrawal(50.25 , myAccount);
+const t1 = new Withdrawal(50.25 , myAccount);
 t1.commit();
 console.log('Transaction 1:', t1);
 console.log(`Balance after transaction 1: $${myAccount.balance}`);
 console.log("------------------------");
 
-t2 = new Withdrawal(9.99, myAccount);
+const t2 = new Withdrawal(9.99, myAccount);
 t2.commit();
 console.log('Transaction 2:', t2);
 console.log(`Balance after transaction 2: $${myAccount.balance}`);
 console.log("------------------------");
 
-t3 = new Deposit(120.00, myAccount);
+const t3 = new Deposit(120.00, myAccount);
 t3.commit();
 console.log("Transaction 3:", t3);
 console.log(`Balance after transaction 3: $${myAccount.balance}`);
